@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Prediction Result</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Result</h2>
+            <pre>{{ result | tojson(indent=2) }}</pre>
+			<p><strong>Placement Status:</strong> {{ "Placed" if result["Placement"] else "Not Placed" }}</p>
+            <p><strong>Placement Probability:</strong> {{ result["Placement_Probability"] | round(2) }}</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Psitron Technologies Pvt. Ltd.</p>
+    </footer>
+</body>
+</html>

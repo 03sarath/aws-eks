@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Inference Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo" class="logo">
+        </div>
+        <h1>Model Inference Dashboard</h1>
+    </header>
+    <main>
+        <form action="/predict" method="post" class="form-container">
+            <h2>Get Started</h2>
+            <label for="Port">Port Number:</label>
+            <input type="text" id="Port" name="Port" value="65433" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="M">Male</option>
+                <option value="F" selected>Female</option>
+            </select>
+
+            <label for="ssc_p">SSC Percentage:</label>
+            <input type="number" id="ssc_p" name="ssc_p" value="71.0" required>
+
+            <label for="ssc_b">SSC Board:</label>
+            <input type="text" id="ssc_b" name="ssc_b" value="Central" required>
+
+            <label for="hsc_p">HSC Percentage:</label>
+            <input type="number" id="hsc_p" name="hsc_p" value="58.66" required>
+
+            <label for="hsc_b">HSC Board:</label>
+            <input type="text" id="hsc_b" name="hsc_b" value="Central" required>
+
+            <label for="hsc_s">HSC Stream:</label>
+            <input type="text" id="hsc_s" name="hsc_s" value="Science" required>
+
+            <label for="degree_p">Degree Percentage:</label>
+            <input type="number" id="degree_p" name="degree_p" value="58.0" required>
+
+            <label for="degree_t">Degree Type:</label>
+            <input type="text" id="degree_t" name="degree_t" value="Sci&Tech" required>
+
+            <label for="etest_p">E-test Percentage:</label>
+            <input type="number" id="etest_p" name="etest_p" value="56.0" required>
+
+            <label for="mba_p">MBA Percentage:</label>
+            <input type="number" id="mba_p" name="mba_p" value="61.3" required>
+
+            <label for="specialisation">Specialisation:</label>
+            <input type="text" id="specialisation" name="specialisation" value="Mkt&Fin" required>
+
+            <label for="workex">Work Experience:</label>
+            <input type="text" id="workex" name="workex" value="Yes" required>
+
+            <button type="submit" class="btn">Predict</button>
+            <div class="spacer"></div> <!-- Spacer added for extra space -->
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Psitron Technologies Pvt. Ltd.</p>
+    </footer>
+</body>
+</html>
