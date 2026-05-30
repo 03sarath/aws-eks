@@ -1,12 +1,29 @@
+# =============================================================
+# Kubernetes Service — Recruitment Rank App
+# Target: AWS EKS
+# =============================================================
+
 apiVersion: v1
 kind: Service
+
+# METADATA
 metadata:
   name: recruitment-rank-app
+
 spec:
-  type: ClusterIP
+
+  # SERVICE TYPE
+  # LoadBalancer on EKS automatically provisions an AWS Network Load Balancer (NLB).
+  # Use ClusterIP here if you prefer to front this with an ALB Ingress instead.
+  type: LoadBalancer
+
+  # SELECTOR
   selector:
     app: recruitment-rank-app
+
+  # PORT MAPPING
   ports:
-    - protocol: "TCP"
+    - name: http
+      protocol: TCP
       port: 80
       targetPort: 9696
